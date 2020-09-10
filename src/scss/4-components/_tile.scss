@@ -1,0 +1,25 @@
+$this: 'c-tile' !global;
+
+.#{$this} {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  width: 100%;
+  min-height: 200px;
+  padding: 40px;
+  border: 1px solid $BLACK;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    box-shadow: 0 0 11px rgba($BLACK, 0.2);
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $FONT_REGULAR;
+    font-size: 20px;
+    color: $BLACK;
+  }
+}

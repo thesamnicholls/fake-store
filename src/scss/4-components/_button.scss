@@ -2,11 +2,9 @@ $this: 'c-button' !global;
 
 .#{$this} {
   background-color: transparent;
-  border: 1px solid $black;
-  font: {
-    size: 20px;
-    family: $font-regular;
-  }
+  border: 1px solid $BLACK;
+  font-size: 20px;
+  font-family: $FONT_REGULAR;
   box-shadow: none;
   cursor: pointer;
   padding: 10px 20px;

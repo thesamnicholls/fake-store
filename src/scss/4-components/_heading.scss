@@ -1,7 +1,7 @@
 $this: 'c-heading' !global;
 
 .#{$this} {
-  background-color: $black;
+  background-color: $BLACK;
   text-align: center;
   padding: 10px;
 
@@ -9,12 +9,14 @@ $this: 'c-heading' !global;
     padding: 40px;
   }
 
+  &__link {
+    text-decoration: none;
+  }
+
   &__text {
-    color: $white;
-    font: {
-      size: 30px;
-      family: $font-regular;
-    }
+    color: $WHITE;
+    font-size: 30px;
+    font-family: $FONT_REGULAR;
     margin: 0;
 
     @include breakpoint('>=', 'ms') {

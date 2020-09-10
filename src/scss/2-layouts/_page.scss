@@ -1,0 +1,27 @@
+$this: 'l-page' !global;
+
+.#{$this} {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  &__title {
+    font-family: $FONT_REGULAR;
+    text-align: center;
+  }
+
+  &__description {
+    font-family: $FONT_REGULAR;
+    line-height: 1.4;
+    text-align: center;
+
+    &--heading {
+      @extend .#{$this}__description;
+      font-size: 22px;
+      text-decoration: underline;
+    }
+  }
+}

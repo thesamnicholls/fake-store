@@ -19,6 +19,6 @@
     "rule-empty-line-before": [ "always", {
       "except": ["after-single-line-comment", "first-nested"]
     }],
-    "unit-whitelist": ["em", "rem", "s", "%", "px", "vw", "vh", "ms", "deg", "fr"]
+    "unit-allowed-list": ["em", "rem", "s", "%", "px", "vw", "vh", "ms", "deg", "fr"]
   }
 }

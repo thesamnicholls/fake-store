@@ -7,7 +7,9 @@ type HeadingProps = {
 const Heading = ({ title }: HeadingProps) => {
   return (
     <div className='c-heading'>
-      <h1 className='c-heading__text'>{title}</h1>
+      <a href='/fake-store' className='c-heading__link'>
+        <h1 className='c-heading__text'>{title}</h1>
+      </a>
     </div>
   )
 }
