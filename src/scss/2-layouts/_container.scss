@@ -1,0 +1,10 @@
+$this: 'l-container' !global;
+
+.#{$this} {
+  display: flex;
+
+  &--loading {
+    @extend .#{$this};
+    margin-top: 40px;
+  }
+}

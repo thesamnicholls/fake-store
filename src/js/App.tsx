@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Heading from './components/Heading'
 import Home from './pages/Home'
-import listingPage from './pages/listingProducts'
+import ListingProducts from './pages/ListingProducts'
 
 const App = (): JSX.Element => {
   return (
@@ -13,7 +13,7 @@ const App = (): JSX.Element => {
         <Route
           exact
           path='/fake-store/category/:category_id'
-          component={listingPage}
+          component={ListingProducts}
         />
       </Switch>
     </BrowserRouter>

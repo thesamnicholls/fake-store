@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-type TileProps = {
+export interface TileProps {
   title: string
   id: string
 }
