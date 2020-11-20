@@ -13,4 +13,10 @@ $this: 'l-grid' !global;
   @include breakpoint('>=', 'ms') {
     padding: 20px;
   }
+
+  &--card {
+    @extend .#{$this};
+    grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+    max-width: 3000px;
+  }
 }

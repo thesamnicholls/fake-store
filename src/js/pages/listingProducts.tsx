@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import Loading from '../components/Loading'
+import Card from '../components/Card/index'
+import Search from '../components/Search'
 import Select from 'react-select'
+import Grid from '../components/Grid/index'
 
 const ListingProducts = (props: any): JSX.Element => {
   // State to store all the products returned from the API
   const [products, setProducts] = useState<any[]>([])
   // State to store the option the user has selected in the dropdown
   const [selectedOption, setSelectedOption] = useState(null)
-  //
+  // State to signal if the application is loading something
   const [isLoading, setIsLoading] = useState(true)
+  //
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const results = products.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm.toLocaleLowerCase()),
+  )
 
   // Storing the current page id in a variable
   const id = props.match.params.category_id
 
   // The options which will be used in the select dropdown to sort the data
   const options = [
-    { value: 'ascending', label: 'Ascending' },
-    { value: 'decending', label: 'Decending' },
+    { value: 'ascending', label: 'High to Low' },
+    { value: 'decending', label: 'Low to High' },
   ]
 
   useEffect(() => {
@@ -38,7 +47,14 @@ const ListingProducts = (props: any): JSX.Element => {
   return (
     <div className='l-page'>
       <h2 className='c-title'>{id}</h2>
-      <label htmlFor='priceSort'>Sort Price</label>
+      <Search
+        placeholder='Search Movies...'
+        value={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+      <label className='c-label' htmlFor='priceSort'>
+        Sort Price
+      </label>
       <Select
         value={selectedOption}
         onChange={onHandleChange}
@@ -47,14 +63,17 @@ const ListingProducts = (props: any): JSX.Element => {
         classNamePrefix='c-select'
       />
       {!isLoading ? (
-        <div>
-          {products.map((product) => (
-            <div key={product.id}>
-              <p>{product.title}</p>
-              <p>{product.price}</p>
-            </div>
+        <Grid>
+          {results.map((product) => (
+            <Card
+              id={product.id}
+              image={product.image}
+              title={product.title}
+              description={product.description}
+              price={product.price}
+            />
           ))}
-        </div>
+        </Grid>
       ) : (
         <Loading />
       )}
